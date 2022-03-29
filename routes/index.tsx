@@ -25,7 +25,8 @@ export default function MainPage() {
 
 function Hero() {
   const container = tw`w-full h-64 flex justify-center items-center flex-col`;
-  const title = tw`text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
+  const title = tw
+    `text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
   const subtitle = tw`mt-4 text(2xl gray-600 center)`;
 
   return (
@@ -54,14 +55,14 @@ function Intro() {
       <p class={tw`text-gray-600 text-lg font-extrabold`}>Why Deno?</p>
       <ul class={tw`text-gray-600 list-disc list-inside pl-4`}>
         <li>
-          <b>Is secure by default.</b> No file, network, or environment access,
-          unless explicitly enabled.
+          <b>Is secure by default.</b>{" "}
+          No file, network, or environment access, unless explicitly enabled.
         </li>
 
         <li>
-          <b>Good Development Experience.</b> Supports TypeScript out of the
-          box, has built-in utlities like a dependency inspector and a code
-          formatter.
+          <b>Good Development Experience.</b>{" "}
+          Supports TypeScript out of the box, has built-in utlities like a
+          dependency inspector and a code formatter.
         </li>
 
         <li>
@@ -69,8 +70,8 @@ function Intro() {
         </li>
 
         <li>
-          <b>Rich Standard Library.</b> It has a set of reviewed and audited
-          standard modules.
+          <b>Rich Standard Library.</b>{" "}
+          It has a set of reviewed and audited standard modules.
         </li>
 
         <li>
@@ -86,7 +87,8 @@ function Intro() {
       </ul>
 
       <button
-        class={tw`bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
+        class={tw
+          `bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
       >
         <a
           class={tw`text-blue-600 font-extrabold text-lg hover:text-3xl mt-5`}
@@ -97,7 +99,8 @@ function Intro() {
       </button>
 
       <button
-        class={tw`ml-52 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
+        class={tw
+          `ml-52 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
       >
         <a
           class={tw`text-blue-600 font-extrabold text-lg hover:text-3xl mt-5`}
