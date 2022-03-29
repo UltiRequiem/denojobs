@@ -18,7 +18,6 @@ export default function MainPage() {
       <Hero />
       <NavigationBar active="/" />
       <Intro />
-      <Example />
       <Footer />
     </>
   );
@@ -26,14 +25,23 @@ export default function MainPage() {
 
 function Hero() {
   const container = tw`w-full h-64 flex justify-center items-center flex-col`;
-  const title = tw
-    `text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
+  const title = tw`text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
   const subtitle = tw`mt-4 text(2xl gray-600 center)`;
 
   return (
     <section class={container}>
       <h1 class={title}>DenoJobs</h1>
-      <p class={subtitle}>Jobs using the modern JavaScript runtime, Deno.</p>
+      <p class={subtitle}>
+        Jobs using the modern JavaScript runtime,{" "}
+        <a
+          class={tw`text-blue-600 font-extrabold`}
+          href="https://deno.land"
+          target="_blank"
+        >
+          Deno
+        </a>
+        .
+      </p>
     </section>
   );
 }
@@ -43,36 +51,61 @@ function Intro() {
     <section
       class={tw`max-w-screen-sm mx-auto my-16 px(4 sm:6 md:8) space-y-4`}
     >
-      <p class={tw`text-gray-600`}>Deno is cool</p>
+      <p class={tw`text-gray-600 text-lg font-extrabold`}>Why Deno?</p>
       <ul class={tw`text-gray-600 list-disc list-inside pl-4`}>
         <li>
-          <b>Feature One</b>
+          <b>Is secure by default.</b> No file, network, or environment access,
+          unless explicitly enabled.
         </li>
+
         <li>
-          <b>Feature 2</b>
+          <b>Good Development Experience.</b> Supports TypeScript out of the
+          box, has built-in utlities like a dependency inspector and a code
+          formatter.
         </li>
+
         <li>
-          <b>Feature 3</b>.
+          <b>Ships only a single executable file.</b> Easy deployment.
+        </li>
+
+        <li>
+          <b>Rich Standard Library.</b> It has a set of reviewed and audited
+          standard modules.
+        </li>
+
+        <li>
+          <b>It's being exponentially adopted.</b>{" "}
+          <a
+            class={tw`text-blue-900 underline`}
+            href="https://github.com/denoland/deno/wiki#companies-interested-in-deno"
+          >
+            {" "}
+            See all the companies interested in using and exploring Deno.
+          </a>
         </li>
       </ul>
-      <p class={tw`text-gray-600`}>More info</p>
-    </section>
-  );
-}
 
-function Example() {
-  return (
-    <section
-      class={tw`max-w-screen-sm mx-auto my-16 px(4 sm:6 md:8) space-y-4`}
-    >
-      <h2 id="example" class={tw`text(xl gray-600) font-bold`}>
-        <a href="#example" class={tw`hover:underline`}>
-          Example
+      <button
+        class={tw`bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
+      >
+        <a
+          class={tw`text-blue-600 font-extrabold text-lg hover:text-3xl mt-5`}
+          href="/jobs"
+        >
+          Publish a Job Offer
         </a>
-      </h2>
-      <p class={tw`text-gray-600`}>Some text</p>
-      <p class={tw`text-gray-600`}>More info</p>
-      <p class={tw`text-gray-600`}>Learn Deno</p>
+      </button>
+
+      <button
+        class={tw`ml-52 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`}
+      >
+        <a
+          class={tw`text-blue-600 font-extrabold text-lg hover:text-3xl mt-5`}
+          href="/jobs/backend"
+        >
+          Find a Job
+        </a>
+      </button>
     </section>
   );
 }
