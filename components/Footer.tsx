@@ -21,13 +21,15 @@ export function Footer() {
     <footer class={footer}>
       <div class={inner}>
         {LINKS.map((link) => (
-          <a href={link.href} class={linkStyle}>
+          <a href={link.href} class={linkStyle} target="_blank">
             {link.title}
           </a>
         ))}
       </div>
       <div class={copyright}>
-        <span>© {new Date().getFullYear()} UltiRequiem</span>
+        <a target="_blank" href="https://ultirequiem.com" class={linkStyle}>
+          <span>© {new Date().getFullYear()} UltiRequiem</span>
+        </a>
       </div>
     </footer>
   );

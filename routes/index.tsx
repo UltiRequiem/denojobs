@@ -26,7 +26,8 @@ export default function MainPage() {
 
 function Hero() {
   const container = tw`w-full h-64 flex justify-center items-center flex-col`;
-  const title = tw`text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
+  const title = tw
+    `text(4xl sm:5xl lg:6xl gray-900 center) sm:tracking-tight font-extrabold`;
   const subtitle = tw`mt-4 text(2xl gray-600 center)`;
 
   return (
