@@ -94,7 +94,7 @@ function Intro() {
           class={tw`text-blue-600 font-extrabold text-lg hover:text-3xl mt-5`}
           href="/jobs"
         >
-          Publish a Job Offer
+          Publish an Offer
         </a>
       </button>
 
