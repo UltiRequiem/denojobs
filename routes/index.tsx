@@ -2,8 +2,8 @@
 /** @jsxFrag Fragment */
 
 import { Fragment, h, Head, tw } from "../client_deps.ts";
-import NavigationBar from "../components/NavigationBar.tsx";
-import Footer from "../components/Footer.tsx";
+
+import { Footer, NavigationBar } from "../components/mod.ts";
 
 export default function MainPage() {
   return (
@@ -42,9 +42,7 @@ function Intro() {
     <section
       class={tw`max-w-screen-sm mx-auto my-16 px(4 sm:6 md:8) space-y-4`}
     >
-      <p class={tw`text-gray-600`}>
-        Deno is cool
-      </p>
+      <p class={tw`text-gray-600`}>Deno is cool</p>
       <ul class={tw`text-gray-600 list-disc list-inside pl-4`}>
         <li>
           <b>Feature One</b>
@@ -56,13 +54,10 @@ function Intro() {
           <b>Feature 3</b>.
         </li>
       </ul>
-      <p class={tw`text-gray-600`}>
-        More info
-      </p>
+      <p class={tw`text-gray-600`}>More info</p>
     </section>
   );
 }
-
 
 function Example() {
   return (
@@ -74,15 +69,9 @@ function Example() {
           Example
         </a>
       </h2>
-      <p class={tw`text-gray-600`}>
-        Some text
-      </p>
-      <p class={tw`text-gray-600`}>
-        More info
-      </p>
-      <p class={tw`text-gray-600`}>
-        Learn Deno
-      </p>
+      <p class={tw`text-gray-600`}>Some text</p>
+      <p class={tw`text-gray-600`}>More info</p>
+      <p class={tw`text-gray-600`}>Learn Deno</p>
     </section>
   );
 }

@@ -3,9 +3,9 @@
 
 import { apply, Fragment, h, Head, PageProps, tw } from "../../client_deps.ts";
 import { gfm, type Handlers } from "../../server_deps.ts";
-import DocsSidebar from "../../components/Sidebar.tsx";
-import Footer from "../../components/Footer.tsx";
-import NavigationBar from "../../components/NavigationBar.tsx";
+
+import { Sidebar, Footer, NavigationBar } from "../../components/mod.ts";
+
 import {
   SLUGS,
   TABLE_OF_CONTENTS,
@@ -51,7 +51,7 @@ export const handler: Handlers<Data> = {
   },
 };
 
-export default function DocsPage(props: PageProps<Data>) {
+export default function JobPage(props: PageProps<Data>) {
   return (
     <>
       <Head>
@@ -75,7 +75,7 @@ function Header() {
       <div class={tw`p-4`}>
         <Title />
       </div>
-      <label for="docs_sidebar" class={sidebarButton}>
+      <label for="sidebar" class={sidebarButton}>
         <svg
           class={tw`h-6 w-6`}
           stroke="currentColor"
@@ -135,17 +135,17 @@ function MobileSidebar(props: { path: string }) {
       <input
         type="checkbox"
         class={tw`hidden` + " toggle"}
-        id="docs_sidebar"
+        id="sidebar"
         autocomplete="off"
       ></input>
       <div class={container}>
-        <label class={backdrop} for="docs_sidebar" />
+        <label class={backdrop} for="sidebar" />
         <div class={sidebar}>
           <div class={heading}>
             <Title />
           </div>
           <nav class={items}>
-            <DocsSidebar path={props.path} />
+            <Sidebar path={props.path} />
           </nav>
         </div>
       </div>
@@ -158,7 +158,7 @@ function DesktopSidebar(props: { path: string }) {
     <nav
       class={tw`w-[16rem] flex-shrink-0 hidden md:block py-8 pr-4 border(r-2 gray-100)`}
     >
-      <DocsSidebar path={props.path} />
+      <Sidebar path={props.path} />
     </nav>
   );
 }

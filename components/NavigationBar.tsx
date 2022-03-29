@@ -2,7 +2,7 @@
 
 import { h, tw } from "../client_deps.ts";
 
-export default function NavigationBar(props: { active: string }) {
+export function NavigationBar(props: { active: string }) {
   const items = [
     {
       name: "Home",

@@ -1,2 +1,3 @@
 # Shopify
-Plugins 
+
+Plugins

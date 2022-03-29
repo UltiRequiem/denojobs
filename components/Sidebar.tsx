@@ -7,7 +7,7 @@ import {
   TableOfContentsCategoryEntry,
 } from "../data/jobs.ts";
 
-export default function DocsSidebar(props: { path: string }) {
+export function Sidebar(props: { path: string }) {
   return (
     <ol class={tw`list-decimal list-inside font-semibold` + " nested"}>
       {CATEGORIES.map((category) => (

@@ -57,8 +57,8 @@ for (const parent in toc) {
   if (rawEntry.pages) {
     for (const [id, title] of rawEntry.pages) {
       const slug = `${parent}/${id}`;
-      const href = `/docs/${slug}`;
-      const file = `docs/${slug}.md`;
+      const href = `/jobs/${slug}`;
+      const file = `jobs/${slug}.md`;
 
       const entry = { slug, title, category: parent, href, file };
 
