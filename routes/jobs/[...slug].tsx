@@ -27,7 +27,7 @@ export const handler: Handlers<Data> = {
     if (slug === "") {
       return new Response("", {
         status: 307,
-        headers: { location: "/" },
+        headers: { location: "/jobs/introduction" },
       });
     }
 
@@ -69,6 +69,7 @@ export default function DocsPage(props: PageProps<Data>) {
 function Header() {
   const header = tw`mx-auto max-w-screen-lg flex gap-3 justify-between`;
   const sidebarButton = tw`px-4 py-4 md:hidden border(l-2 gray-100) flex items-center hover:bg-gray-50`;
+
   return (
     <header class={header}>
       <div class={tw`p-4`}>
@@ -97,6 +98,7 @@ function Title() {
   const title = tw`text(2xl gray-900) tracking-tight font-extrabold`;
   const pageName = tw`font-light`;
   const subtitle = tw`text(sm gray-600)`;
+
   return (
     <>
       <p class={title}>
@@ -109,6 +111,7 @@ function Title() {
 
 function Main(props: { path: string; page: Page }) {
   const main = tw`mx-auto max-w-screen-lg px-4 flex gap-6`;
+
   return (
     <>
       <MobileSidebar path={props.path} />
@@ -126,6 +129,7 @@ function MobileSidebar(props: { path: string }) {
   const sidebar = tw`relative flex-1 flex flex-col w-[16rem] h-full bg-white border(r-2 gray-100)`;
   const heading = tw`p-4 border(b-2 gray-100)`;
   const items = tw`pt-2 pb-16 px-4 overflow-x-auto`;
+
   return (
     <>
       <input
@@ -163,13 +167,15 @@ function Content(props: { page: Page }) {
   const main = tw`py-8 overflow-hidden`;
   const title = tw`text(4xl gray-900) tracking-tight font-extrabold mt-6`;
   const body = tw`mt-6`;
-  const html = gfm.render(props.page.markdown);
+
+  const __html = gfm.render(props.page.markdown);
+
   return (
     <main class={main}>
       <h1 class={title}>{props.page.title}</h1>
       <div
         class={`${body} markdown-body`}
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html }}
       />
       <ForwardBackButtons slug={props.page.slug} />
     </main>

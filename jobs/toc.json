@@ -1,4 +1,8 @@
 {
+  "introduction": {
+    "title": "Introduction",
+    "content": "This is the introduction. It can hold any content."
+  },
   "backend": {
     "title": "Backend",
     "pages": [["shopify", "Shopify"]]
