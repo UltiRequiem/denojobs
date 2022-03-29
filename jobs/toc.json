@@ -5,11 +5,11 @@
   },
   "backend": {
     "title": "Backend",
-    "pages": [["shopify", "Shopify"]]
+    "pages": [["butlr", "Butlr"]]
   },
   "full-stack": {
     "title": "Full-Stack",
-    "pages": [["example", "Example"]]
+    "pages": [["docusing", "DocuSign"]]
   },
   "iot": {
     "title": "IoT",
