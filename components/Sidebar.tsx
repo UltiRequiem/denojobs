@@ -10,7 +10,7 @@ import {
 export default function DocsSidebar(props: { path: string }) {
   return (
     <ol class={tw`list-decimal list-inside font-semibold` + " nested"}>
-      {CATEGORIES.map((category: any) => (
+      {CATEGORIES.map((category) => (
         <SidebarCategory path={props.path} category={category} />
       ))}
     </ol>
@@ -37,7 +37,7 @@ export function SidebarCategory(props: {
       </a>
       {entries.length > 0 && (
         <ol class={innerList}>
-          {entries.map((entry: any) => (
+          {entries.map((entry) => (
             <SidebarEntry path={props.path} entry={entry} />
           ))}
         </ol>

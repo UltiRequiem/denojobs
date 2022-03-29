@@ -2,14 +2,14 @@
 /** @jsxFrag Fragment */
 
 import { apply, Fragment, h, Head, PageProps, tw } from "../../client_deps.ts";
-import { gfm, Handlers } from "../../server_deps.ts";
+import { gfm, type Handlers } from "../../server_deps.ts";
 import DocsSidebar from "../../components/Sidebar.tsx";
 import Footer from "../../components/Footer.tsx";
 import NavigationBar from "../../components/NavigationBar.tsx";
 import {
   SLUGS,
   TABLE_OF_CONTENTS,
-  TableOfContentsEntry,
+  type TableOfContentsEntry,
 } from "../../data/jobs.ts";
 
 interface Data {
@@ -39,10 +39,14 @@ export const handler: Handlers<Data> = {
       });
     }
 
-    const url = new URL(`../../../${entry.file}`, import.meta.url);
+    const url = new URL(`../../${entry.file}`, import.meta.url);
+
     const markdown = await Deno.readTextFile(url);
+
     const page = { ...entry, markdown };
+
     const resp = ctx.render({ page });
+
     return resp;
   },
 };
@@ -51,11 +55,11 @@ export default function DocsPage(props: PageProps<Data>) {
   return (
     <>
       <Head>
-        <title>{props.data.page?.title ?? "Not Found"} | fresh docs</title>
+        <title>{props.data.page?.title ?? "Not Found"} | Deno Jobs</title>
         <link rel="stylesheet" href="/gfm.css" />
       </Head>
       <Header />
-      <NavigationBar active="/docs" />
+      <NavigationBar active="/jobs" />
       <Main path={props.url.pathname} page={props.data.page} />
       <Footer />
     </>
@@ -96,9 +100,9 @@ function Title() {
   return (
     <>
       <p class={title}>
-        <a href="/">fresh</a> <span class={pageName}>docs</span>
+        <a href="/">deno</a> <span class={pageName}>jobs</span>
       </p>
-      <p class={subtitle}>The next-gen web framework.</p>
+      <p class={subtitle}>Work with Dinosaurs.</p>
     </>
   );
 }
