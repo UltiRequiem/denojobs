@@ -10,9 +10,5 @@
   "full-stack": {
     "title": "Full-Stack",
     "pages": [["docusing", "DocuSign"]]
-  },
-  "iot": {
-    "title": "IoT",
-    "pages": [["awesome", "Awesome"]]
   }
 }
