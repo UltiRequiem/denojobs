@@ -1,0 +1,22 @@
+import { setup } from "../client_deps.ts";
+import { RenderContext, type RenderFn, virtualSheet } from "../server_deps.ts";
+
+const sheet = virtualSheet();
+
+sheet.reset();
+
+setup({ sheet });
+
+export function render(ctx: RenderContext, render: RenderFn) {
+  const snapshot = ctx.state.get("twindSnapshot") as unknown[] | undefined;
+
+  sheet.reset(snapshot);
+
+  render();
+
+  ctx.styles.splice(0, ctx.styles.length, ...sheet.target);
+
+  const newSnapshot = sheet.reset();
+
+  ctx.state.set("twindSnapshot", newSnapshot);
+}

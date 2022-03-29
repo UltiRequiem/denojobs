@@ -1,0 +1,14 @@
+{
+  "backend": {
+    "title:": "Backend",
+    "pages": [["shopify", "Shopify"]]
+  },
+  "full-stack": {
+    "title:": "Full-Stack",
+    "pages": [["example", "Example"]]
+  },
+  "iot": {
+    "title:": "IoT",
+    "pages": [["awesome", "Awesome"]]
+  }
+}
