@@ -1,5 +1,7 @@
 # DenoJobs
 
+Archived: Deno is dead...
+
 > https://djobs.deno.dev
 
 Jobs using the modern JavaScript runtime, Deno.
